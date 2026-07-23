@@ -1,0 +1,85 @@
+-- -- Use default setups (assuming nvchad’s base)
+-- require("nvchad.configs.lspconfig").defaults()
+--
+-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+--
+-- -- Optionally, you can set default floating window border (for hover, etc.)
+-- vim.o.winborder = "rounded" -- new default border option in 0.11 :contentReference[oaicite:1]{index=1}
+--
+-- -- Configure servers via new vim.lsp.config interface
+-- vim.lsp.config.lua_ls = {
+--   capabilities = capabilities,
+--   -- you can also set root_dir, settings, etc.
+-- }
+--
+-- -- HTML server: use the vim.lsp.config style
+-- vim.lsp.config.html = {
+--   filetypes = { "html", "templ", "blade" },
+--   capabilities = capabilities,
+-- }
+--
+-- lspconfig.intelephense.setup({
+--   capabilities = capabilities,
+--   settings = {
+--     intelephense = {
+--       telemetry = { enabled = false }, -- Maintain your dump's current override
+--       diagnostics = {
+--         strictTypes = true, -- Force global strict type checking
+--         suspectCode = true, -- Catch code smells & suspect logic
+--         undefinedVariables = "on", -- Mark undefined variables explicitly
+--         argumentCount = "on", -- Throw strict errors on incorrect parameter counts
+--       },
+--       completion = {
+--         withMethodBody = true, -- Generate stubs for implemented interfaces/abstract methods
+--       },
+--     },
+--   },
+-- })
+--
+-- lspconfig.phpactor.setup({
+--   cmd = { "phpactor", "language-server" },
+--   init_options = {},
+--   on_attach = function(client, bufnr)
+--     client.server_capabilities.renameProvider = true
+--     client.server_capabilities.codeActionProvider = true
+--
+--     -- local opts = { buffer = bufnr, remap = false }
+--     -- vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- Phpactor Rename
+--     -- vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts) -- Phpactor Refactor Actions
+--   end,
+-- })
+--
+-- -- List of servers to enable
+-- local servers = {
+--   "html",
+--   "cssls",
+--   "ts_ls",
+--   "typos_lsp",
+-- }
+--
+-- -- Enable them with the new API
+-- vim.lsp.enable(servers)
+-- vim.lsp.enable("phpactor")
+-- vim.lsp.enable("intelephense")
+--
+-- -- Setup diagnostics (because virtual_text is now opt-in) :contentReference[oaicite:2]{index=2}
+-- vim.diagnostic.config({
+--   virtual_text = true, -- or { current_line = true }
+--   virtual_lines = false, -- disable virtual_lines by default
+--   signs = true,
+--   underline = true,
+--   update_in_insert = false,
+-- })
+--
+-- -- Setup auto-completion from LSP (opt-in) :contentReference[oaicite:3]{index=3}
+-- -- vim.api.nvim_create_autocmd("LspAttach", {
+-- --   callback = function(ev)
+-- --     local client = vim.lsp.get_client_by_id(ev.data.client_id)
+-- --     if client and client.supports_method("textDocument/completion") then
+-- --       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+-- --     end
+-- --   end,
+-- -- })
+--
+-- -- If you still want to fall back to nvim-lspconfig style for some servers:
+-- -- (You can still use require("lspconfig").X.setup for particular servers if needed)
