@@ -1,5 +1,3 @@
-vim.g.phpactor_enabled = false
-
 return {
   {
     "neovim/nvim-lspconfig",
