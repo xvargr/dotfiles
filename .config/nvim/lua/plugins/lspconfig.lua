@@ -45,6 +45,7 @@ return {
             ["language_server_psalm.enabled"] = false,
           },
         },
+        ruff = {},
       },
       setup = {
         intelephense = function(_, server_opts)

@@ -224,6 +224,14 @@ return {
     opts = {},
     dependencies = { { "nvim-mini/mini.icons", opts = {} } },
     lazy = false,
+    config = function()
+      require("oil").setup({
+        lsp_file_methods = {
+          enabled = true,
+          autosave_changes = "unmodified", -- Automatically saves the LSP-modified buffers
+        },
+      })
+    end,
   },
 
   -- { "NMAC427/guess-indent.nvim", lazy = false },
