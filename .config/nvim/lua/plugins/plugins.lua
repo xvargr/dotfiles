@@ -228,7 +228,10 @@ return {
       require("oil").setup({
         lsp_file_methods = {
           enabled = true,
-          autosave_changes = "unmodified", -- Automatically saves the LSP-modified buffers
+          -- Time to wait for LSP move/rename completion (in ms)
+          timeout_ms = 1000,
+          -- Automatically :wa (write all) after the LSP updates imports
+          autosave_changes = true,
         },
       })
     end,
@@ -315,6 +318,16 @@ return {
       },
       scroll = {
         enabled = false,
+      },
+    },
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      highlight = {
+        pattern = [[\v.*<((KEYWORDS)%(\([^)]*\))?):]],
       },
     },
   },

@@ -20,7 +20,7 @@ end, { desc = "Grep (cwd)" })
 
 -- namu symbol search
 map("n", "<leader>fs", ":Namu symbols<cr>", { desc = "Jump to LSP symbol", silent = true })
-map("n", "<leader>fS", ":Namu workspace<cr>", { desc = "LSP Symbols - Workspace", silent = true })
+map("n", "<leader>fss", ":Namu workspace<cr>", { desc = "LSP Symbols - Workspace", silent = true })
 
 -- Smart splits (tmux)
 -- resizing splits
@@ -86,7 +86,8 @@ end, { desc = "Select refactor" })
 -- Close buffer without closing split
 -- map("n", "<leader>q", ":enew | bd #<CR>", { noremap = true, silent = true, desc = "Close buffer" })
 
-map("n", "<leader>o", "<cmd>Oil --float<CR>", { desc = "Open Oil File Explorer" })
+-- map("n", "<leader>o", "<cmd>Oil --float<CR>", { desc = "Open Oil File Explorer" })
+map("n", "<leader>o", "<cmd>Oil<CR>", { desc = "Open Oil File Explorer" })
 
 -- treeSJ
 set("n", "<leader>j", require("treesj").toggle, { desc = "Split TS block" })

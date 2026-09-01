@@ -51,10 +51,10 @@ return {
         intelephense = function(_, server_opts)
           server_opts.on_attach = function(client, bufnr)
             -- Turn off locked premium features & definition provider
-            client.server_capabilities.definitionProvider = false
-            client.server_capabilities.renameProvider = false
-            client.server_capabilities.codeActionProvider = false
-            client.server_capabilities.implementationProvider = false
+            -- client.server_capabilities.definitionProvider = false
+            -- client.server_capabilities.renameProvider = false
+            -- client.server_capabilities.codeActionProvider = false
+            -- client.server_capabilities.implementationProvider = false
           end
         end,
         phpactor = function(_, server_opts)
