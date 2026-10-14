@@ -90,6 +90,9 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='nvim'
 # fi
+#
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -116,3 +119,5 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 eval "$(starship init zsh)"
 eval "$(ssh-agent -s)"
 ssh-add /home/xvargr/.ssh/id_ed25519 # gitlab github ssh key
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit

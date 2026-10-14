@@ -19,8 +19,8 @@ map("n", "fw", function()
 end, { desc = "Grep (cwd)" })
 
 -- namu symbol search
-map("n", "<leader>fs", ":Namu symbols<cr>", { desc = "Jump to LSP symbol", silent = true })
-map("n", "<leader>fss", ":Namu workspace<cr>", { desc = "LSP Symbols - Workspace", silent = true })
+map("n", "<leader>fss", ":Namu symbols<cr>", { desc = "Jump to LSP symbol", silent = true })
+map("n", "<leader>fsf", ":Namu workspace<cr>", { desc = "LSP Symbols - Workspace", silent = true })
 
 -- Smart splits (tmux)
 -- resizing splits
